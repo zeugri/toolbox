@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Atility that generates easy to remember 4 word passwords (XKCD style)
+# Alexandre Arvinte, 2017
+
+# oneliner taken from http://www.commandlinefu.com/commands/view/8990/generate-an-xkcd-936-style-4-word-password
+# and adapted a bit
+
+# on macOs needs 'coreutils' package (from homebrew for instance) 
+
+echo $(grep "^[^']\{4,7\}$" /usr/share/dict/words|gshuf -n4) | sed -e "s/ /-/g"
